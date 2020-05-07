@@ -104,3 +104,29 @@ CREATE OPERATOR CLASS point3d_ops
         OPERATOR        4       >= ,
         OPERATOR        5       > ,
         FUNCTION        1       point3d_cmp;
+
+/*
+
+TODO: see funcs.c, point_farthest_from_sphere
+
+This is a STABLE function as the result depends on rows in table
+
+CREATE FUNCTION point_farthest_from_sphere(int4)
+RETURNS point3d
+AS 'point3d'
+LANGUAGE C STABLE STRICT;
+
+*/
+
+/*
+
+TODO: see funcs.c, points_inside_sphere
+
+This is a STABLE function as the result depends on rows in table
+
+CREATE FUNCTION points_inside_sphere(int4)
+RETURNS SETOF point3d
+AS 'point3d'
+LANGUAGE C STABLE STRICT;
+
+*/
